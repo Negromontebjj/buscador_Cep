@@ -2,8 +2,6 @@ import React, { useState, useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView, Keyboard } from 'react-native';
 import api from './src/services/api';
 
-// import { Container } from './styles';
-
 export default function buscador_Cep() {
   const [cep, setCep] = useState('')
   const [cepUser, setCepUser] = useState(null)
@@ -26,19 +24,13 @@ export default function buscador_Cep() {
       console.log('Erro :' + error)
     }
 
-
-
-
-
   }
-
 
   function limpar() {
     setCep('');
     inputRef.current.focus();
     setCepUser(null);
   }
-
 
   return (
     <SafeAreaView style={styles.container}>
@@ -64,7 +56,7 @@ export default function buscador_Cep() {
         </TouchableOpacity>
       </View>
 
-
+      
       {cepUser &&
         <View style={styles.resultado}>
           <Text style={styles.itemText}> Cep: {cepUser.cep}</Text>
